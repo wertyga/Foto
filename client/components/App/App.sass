@@ -1,0 +1,57 @@
+@import '../../styles/vars'
+
+.App
+  position: relative
+  overflow: hidden
+  box-sizing: border-box
+  background: url('../../../data/images/original-(1)-.png') no-repeat
+  background-color: $bgColor
+  background-size: 100%
+  background-attachment: fixed
+  padding: 10px $leftPadding 0
+  transition: padding .5s
+  min-height: 100vh
+  .fotoprintRef
+    padding: 10px
+    box-sizing: border-box
+    transition: border .5s
+    border: 1px solid transparent
+    &:hover
+      border: 1px solid $borderColor
+  .move
+    transition: transform .5s
+
+.error
+  color: red
+  width: 100%
+  text-align: center
+.btn
+  background-color: lighten($bgColor, 10%)
+  outline: none
+  color: $fontColor
+  border: none
+  padding: 10px 20px
+  cursor: pointer
+  font-weight: bold
+  box-sizing: border-box
+  &:hover
+    background-color: lighten($bgColor, 20%)
+  &:active
+    background-color: #fff
+    color: $bgColor
+  &:disabled
+    background-color: $borderColor
+    cursor: no-drop
+
+.custom-input
+  width: 100%
+  box-sizing: border-box
+  padding: 5px 10px
+  background-color: $menuBgColor
+  color: $fontColor
+  outline: none
+  border: 1px solid $borderColor
+  &:disabled
+    color: $disableFontColor
+
+@import '../../styles/media'

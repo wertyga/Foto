@@ -1,0 +1,60 @@
+@import '../../styles/vars'
+
+.Image
+  font-size: 11px
+  width: 20%
+  padding: 15px 10px 10px 0
+  box-sizing: border-box
+  position: relative
+  margin-top: 20px
+  .user-image
+    height: 100%
+    display: flex
+    font-size: 13px
+    align-self: flex-start
+    justify-content: space-between
+    flex-direction: column
+  .main-content
+    margin-top: 5px
+    box-sizing: border-box
+    padding: 5px
+    border: 1px solid $borderColor
+    padding-left: 10px
+  .img
+    transition: transform .5s
+    cursor: pointer
+    padding: 5px
+    border: 1px solid $borderColor
+    &:hover
+      transform: scale(1.1)
+  img
+    width: 100%
+  h6
+    font-size: 16px
+    margin: 0 5px 0 0
+    display: inline-block
+  .header
+    margin-top: 5px
+    &:first-child
+      margin-top: 0
+  .delete-btn
+    margin-top: 10px
+    background-color: $bgColor
+    cursor: pointer
+    &:hover
+      background-color: lighten($bgColor, 20%)
+  i.fa-times
+    color: $fontColor
+    transition: opacity, transform .5s
+    position: absolute
+    top: -30px
+    right: 0
+    font-size: 20px
+    cursor: pointer
+    &:hover
+      transform: scale(1.5)
+      z-index: 100
+
+
+@import '../../styles/media'
+

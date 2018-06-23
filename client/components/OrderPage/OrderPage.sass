@@ -1,0 +1,124 @@
+@import '../../styles/vars'
+
+.OrderPage
+  .orders-date-list
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+  .order-description
+    position: relative
+    box-sizing: border-box
+    padding: 10px 0 10px 15px
+    border-left: 1px solid $borderColor
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    transition: border-color, background-color .3s
+    cursor: pointer
+    .bottom-description
+      display: flex
+      justify-content: space-between
+      .btn
+        align-self: flex-end
+    i.fa-times.close
+      position: absolute
+      top: -20px
+      right: 10px
+      transition: transform .5s
+      font-size: 20px
+      &:hover
+        transform: scale(1.5)
+    &:hover
+      background-color: $menuBgColor
+      i.fa-times.close
+        display: block
+  .orders-format
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    margin-bottom: 20px
+  .order-order-description-warpper
+    margin-right: 20px
+    margin-bottom: 10px
+  .order-date
+    margin-bottom: 20px
+    padding: 10px 10px 10px 0
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    .left-content
+      width: 30%
+    .right-content
+      width: 70%
+      transition: opacity 1s
+      display: none
+      opacity: 0
+      &.show
+        display: initial
+        opacity: 1
+    .date
+      margin-bottom: 10px
+    .orders-names
+      cursor: pointer
+      margin-left: 5px
+      position: relative
+      margin-bottom: 5px
+      padding-bottom: 5px
+      &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 0
+        height: 1px
+        display: block
+        border-bottom: 1px solid $borderColor
+        transition: width .3s
+      &.active
+        &:after
+          width: 50%
+      &:hover
+        &:after
+          width: 50%
+
+  .done
+    margin-top: 5px
+    color: #00c83f
+    i
+      color: #00c83f
+  .await
+    margin-top: 5px
+    color: #ff0100
+  .progress
+    margin-top: 5px
+    display: flex
+    align-items: center
+  .await, .done, .progress
+    i
+      margin-right: 20px
+  .spiner-progress
+    width: 19px
+    height: 19px
+    border: 3px dotted $borderColor
+    border-radius: 50%
+    animation: rotate 4s infinite linear
+    margin-right: 20px
+
+@keyframes rotate
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)
+
+
+@import '../../styles/media'
+
+
+
+
+
+
+
+
+
+    

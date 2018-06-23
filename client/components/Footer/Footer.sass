@@ -1,0 +1,50 @@
+@import '../../styles/vars'
+
+.Footer
+  box-sizing: border-box
+  position: absolute
+  width: 100%
+  background-color: #000
+  bottom: 0
+  left: 0
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  padding: 10px 30px 30px 30px
+  h4
+    position: relative
+    padding-bottom: 10px
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 1px
+      background-color: $mainColor
+      display: block
+      bottom: 0
+  .content
+    //margin-left: 20px
+  .phone
+    .content
+      p
+        margin-bottom: 5px
+  & > div:not(:last-child)
+    margin-right: 10vw
+  .social
+    i
+      margin-right: 15px
+      border-radius: 50%
+      cursor: pointer
+      font-size: 25px
+      &.fa-facebook-square
+        color: #3b5998
+      &.fa-twitter-square
+        color: #0084b4
+      &.fa-google-plus-square
+        color: #d34836
+      &.fa-vk
+        color: #0072b1
+  .address
+    //margin-bottom: 20px
+
+@import '../../styles/media'

@@ -1,0 +1,253 @@
+@import './vars'
+
+@media only screen and (min-width : 1200px)
+  .MainPage
+    font-size: 18px
+    .header-section
+      width: 80%
+  .MainContentBlock
+    padding: 25px
+    h3
+      font-size: 30px
+
+@media only screen and (max-width : 999px)
+  .Product
+    width: 48%
+  .userOrder
+    .item-wrapper
+      width: 33%
+
+@media only screen and (max-width : 850px)
+  .Image
+    width: 25%
+
+@media only screen and (max-width : 800px)
+  .Modal
+    .img-block
+      width: 100%
+    .modal-wrapper
+      flex-direction: column
+      width: 100%
+    .modal-content
+      margin-left: 0
+      margin-top: 10px
+      width: 100%
+  .Loading
+    .cssload-speeding-wheel
+      width: 12vw
+      height: 12vw
+
+@media only screen and (max-width : 750px)
+  .Prices
+    .title
+      margin-left: 30%
+  .userOrder
+    .item-wrapper
+      width: 50%
+      .image
+        width: 50%
+  .Image
+    width: 33%
+
+@media only screen and (max-width : 700px)
+  .DropMenu
+    min-width: 30vw
+  .LoginForm
+    input, .input-block.disabled input
+      width: 100%
+  .OrderPage
+    .order-date
+      flex-direction: column
+      .right-content.show
+        width: 100%
+        margin-top: 10px
+  .MainContentBlock
+    .images
+      display: none
+
+@media only screen and (max-width : 600px)
+  .UpperMenu
+    background-color: transparent
+    .right-content
+      transform: translateX(100%)
+    .middle-left-content
+      .logo
+        transform: translateX(-100%)
+      .navigate
+        transform: translateX(-150%)
+    .Icon
+      cursor: pointer
+      width: 20px
+  .DropMenuWrapper
+    width: 50vw
+  .Footer
+    padding-top: 0
+    padding-right: 0
+    padding-left: 0
+    flex-direction: column
+    text-align: center
+    justify-content: center
+    .address, .phone
+      margin: 0 !important
+    & > div
+      margin-right: 0
+      padding-right: 40px
+      padding-left: 40px
+  .Image
+    border-right: none
+    margin-top: 30px
+  .Loading
+    .cssload-speeding-wheel
+      width: 15vw
+      height: 15vw
+  .ContactsPage
+    .user-profile-content
+      width: 100%
+    .btn
+      width: 100%
+      text-align: center
+
+@media only screen and (max-width : 530px)
+  .MainContentBlock
+    .main-block-content
+      width: 100%
+  .UpperMenu
+    .middle-left-content
+      display: none !important
+  .App
+    padding-right: 5px
+    padding-left: 5px
+  .DropMenuWrapper
+    width: 97vw
+  .Contacts
+    .main
+      width: 100%
+    .btn
+      position: relative
+      margin-top: 20px
+      width: 100%
+      margin-bottom: 20px
+    .form
+      input
+        width: 100%
+      flex-direction: column
+      textarea
+        width: 100%
+        margin: 10px 0 0 0
+  .CommonPage
+    .content
+      padding: 10px
+  .Modal
+    .modal-content
+      padding: 10px
+  .Loading
+    .cssload-speeding-wheel
+      width: 18vw
+      height: 18vw
+  .OrderPage
+    .order-description
+      .bottom-description
+        flex-direction: column
+        .btn
+          margin-top: 10px
+          align-items: flex-start
+  .userOrder
+    .item-wrapper
+      width: 100%
+      flex-direction: column
+      .image
+        width: 100%
+        border: 1px solid $borderColor
+      .right-content-user-order-item
+        margin-left: 0
+        border-left: none
+        border-bottom: 1px solid $borderColor
+        //border-right: 1px solid $borderColor
+        padding-bottom: 10px
+        margin-top: 10px
+    .btn-wrapper
+      .btn
+        width: 100%
+  .Image
+    width: 50%
+
+@media only screen and (max-width : 750px)
+  .Prices
+    .title
+      margin-left: 10%
+
+@media only screen and (max-width : 600px)
+  .EmptyImage
+    .inner
+      width: 20vw
+      height: 20vw
+  .Product
+    width: 90%
+    margin: 0 auto
+  .ProductsContent
+    .content-wrapper-item
+      justify-content: space-between
+      flex-direction: column
+  .ProductWrapper
+    .select-wrapper
+      flex-direction: column
+      align-items: flex-start
+      .Option
+        width: 60%
+  .ShowImages
+    .preview
+      .buttons
+        justify-content: center
+
+@media only screen and (max-width : 400px)
+  .Product
+    width: 100%
+  .ProductsContent
+    .wrapper-pages
+      width: 30%
+  .ProductWrapper
+    .select-wrapper
+      flex-direction: column
+      .Option
+        width: 100%
+        margin-bottom: 30px
+      .title
+        margin-bottom: 20px
+        align-self: flex-start
+  .Modal
+    padding-left: 5px
+    padding-right: 5px
+  .ShowImages
+    .upper-labels
+      flex-direction: column
+      align-items: flex-start
+      .btn
+        width: 100%
+        text-align: center
+      .btn:first-child
+        margin-bottom: 10px
+      .Option
+        max-width: initial
+      .right-btns, .Option, .left-btns
+        margin-top: 10px
+        margin-left: 0
+        width: 100%
+  .Loading
+    .cssload-speeding-wheel
+      width: 25vw
+      height: 25vw
+  .LoginForm
+    .btn.login-button
+      position: relative
+  .Image
+    width: 100%
+
+@media only screen and (max-width: 360px)
+  .Contacts
+    .wrapper
+      p, a
+        margin-left: 0
+
+@media only screen and (max-height : 370px)
+  .DropMenu
+    font-size: 11px

@@ -1,0 +1,37 @@
+@import '../../styles/vars'
+
+.Product
+  box-sizing: border-box
+  //border: 1px solid $borderColor
+  padding: 2vw
+  cursor: pointer
+  width: 30.6%
+  margin-bottom: 20px
+  transition-duration: .3s
+  transition-property: transform, background-color
+  display: flex
+  align-self: flex-start
+  flex-direction: column
+  justify-content: space-between
+  &:hover
+    background-color: $menuBgColor
+    transform: translateY(-3%)
+  .wrapper
+    border: 1px solid $borderColor
+    padding: 10px
+  img, .EmptyImage
+    width: 100%
+    margin-bottom: 20px
+  span
+    text-align: right
+  h6
+    display: inline-block
+    font-size: 14px
+    margin: 0
+  .product-content
+    div
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 10px
+

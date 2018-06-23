@@ -1,0 +1,49 @@
+.Product
+  cursor: pointer
+  width: 100% !important
+  &:hover
+    background-color: rgba(0, 0, 0, 0.12) !important
+    border-color: #fff !important
+  margin-top: 20px
+  display: inline-flex
+  flex-wrap: wrap
+  h3
+    margin-top: 0
+  .right-block
+    margin-left: 20px
+    flex: 5
+  .left-block
+    flex: 1
+  img
+    left: 0
+    top: 0
+    width: 100%
+  .image
+    position: relative
+    overflow: hidden
+    p
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 2
+      color: #fff
+      margin-right: 3px
+      font-weight: bold
+  .wrapper
+    position: absolute
+    transform: translate(50%, -50%) rotate(-45deg)
+    z-index: 2
+    right: 0
+    top: 0
+    background-color: red
+    border: 3px solid yellow
+    width: 70%
+    height: 130%
+  .category
+    position: relative
+    font-weight: bold
+
+
+
+
+@import '../../styles/media'

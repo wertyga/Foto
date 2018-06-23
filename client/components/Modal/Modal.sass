@@ -1,0 +1,44 @@
+@import '../../styles/vars'
+
+.Modal
+  background-color: rgba(0,0,0, .8)
+  color: $fontColor
+  top: 0
+  left: 0
+  width: 100%
+  padding: 20px
+  box-sizing: border-box
+  position: absolute
+  //transition: all 1s
+  .modal-wrapper
+    display: flex
+
+  .img-block
+    width: 30%
+  img
+    width: 100%
+    padding: 5px
+    border: 1px solid $borderColor
+  .modal-content
+    text-align: left
+    background-color: darken($menuBgColor, 50%)
+    padding: 30px
+    margin-left: 30px
+    width: calc(70% - 30px)
+    box-sizing: border-box
+  i
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 40px
+    cursor: pointer
+  h4
+    margin-bottom: 10px
+  .price
+    margin: 30px 0
+  .btn
+    margin-top: 20px
+    text-align: center
+
+
+@import '../../styles/media'

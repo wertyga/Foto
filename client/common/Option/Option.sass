@@ -1,0 +1,57 @@
+@import '../../styles/vars'
+
+.Option
+  min-width: 26vw
+  .default, .item, label
+    padding: 5px 10px
+  label
+    padding-left: 0
+  //.default, .item
+  //  cursor: pointer
+  //  &:hover
+  //    background-color: $menuBgColor
+  .item
+    cursor: pointer
+  .default
+    //border: 1px solid $borderColor
+  .main-select
+    position: relative
+    .carret
+      //position: absolute
+      width: 10px
+      height: 10px
+      max-width: 10px
+      max-height: 10px
+      border-right: 3px solid $borderColor
+      border-top: 3px solid $borderColor
+      right: 10px
+      top: 50%
+      transform: translateY(-75%) rotate(135deg)
+  .upper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border: 1px solid $borderColor
+    &:hover
+      background-color: $menuBgColor
+    .default
+      width: 100%
+    i
+      margin-right: 10px
+      &.down
+        width: 18px
+        height: 15px
+        border-left: 2px solid $borderColor
+        border-bottom: 2px solid $borderColor
+        transform: rotate(-45deg) translate(0, -50%)
+        box-sizing: border-box
+  .other-content
+    width: 100%
+    margin-top: 3px
+    position: absolute
+    background-color: $menuBgColor
+    z-index: 10
+    .item, .default
+      &:hover
+        background-color: $borderColor
+        color: #000

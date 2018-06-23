@@ -1,0 +1,40 @@
+@import '../../styles/vars'
+
+.ProductWrapper
+  position: relative
+  transition: all 1s
+  .products-menu
+    text-align: right
+    overflow: hidden
+    label
+      display: block
+      margin-bottom: 10px
+    .select
+      background-color: transparent
+      color: $fontColor
+      padding: 5px 10px
+      outline: none
+    .option
+      background-color: transparent
+      color: $fontColor
+      padding: 5px 10px
+  .select-wrapper
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: center
+    text-align: left
+    margin-bottom: 10px
+    .title
+      background-color: $menuBgColor
+      padding: 10px 20px
+      border: 1px solid $borderColor
+      border-radius: 5px
+      align-self: flex-end
+      box-sizing: border-box
+  .title
+    display: inline-block
+
+@import '../../styles/media'
+
+

@@ -1,0 +1,67 @@
+@import '../../styles/vars'
+
+.ProductsContent
+  position: relative
+  box-sizing: border-box
+  .upper-title
+    display: flex
+    height: 1px
+    transform: translateY(100%)
+  .border-top
+    display: inline-block
+    width: 100%
+
+  .error
+    display: flex
+    justify-content: center
+    align-items: center
+  .products-content
+    transition: transform .3s
+    margin-top: 20px
+    display: flex
+    flex-wrap: wrap
+    box-sizing: border-box
+    justify-content: space-between
+    border-top: 1px solid transparent
+  .empty-list
+    width: 100%
+    text-align: center
+    padding: 20px 0 20vh 0
+
+  .content-wrapper-item
+    display: flex
+    flex-wrap: wrap
+    //justify-content: space-between
+    width: 100%
+    //margin-right: 20px
+    //&:last-child
+    //  margin-right: 0
+  .pages
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 20px
+    position: relative
+    bottom: 0
+    i
+      font-size: 30px
+      transition: transform .3s
+      cursor: pointer
+      position: absolute
+      top: -50%
+
+      &:hover
+        transform: scale(1.3)
+      &.fa-angle-left
+        left: 0
+      &.fa-angle-right
+        right: 0
+  .wrapper-pages
+    width: 20%
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+@import '../../styles/media'

@@ -1,0 +1,37 @@
+
+
+.Option
+  min-width: 26vw
+  .default, .item, label
+    padding: 5px 10px
+  label
+    padding-left: 0
+  .default, .item
+    cursor: pointer
+    &:hover
+      background-color: #fff
+  .default
+    border: 1px solid #eee
+  .main-select
+    position: relative
+    .carret
+      position: absolute
+      width: 10px
+      height: 10px
+      max-width: 10px
+      max-height: 10px
+      border-right: 3px solid #eee
+      border-top: 3px solid #eee
+      right: 10px
+      top: 50%
+      transform: translateY(-75%) rotate(135deg)
+  .other-content
+    width: 100%
+    margin-top: 3px
+    position: absolute
+    background-color: #fff
+    z-index: 10
+    .item
+      &:hover
+        background-color: #eee
+        color: #000

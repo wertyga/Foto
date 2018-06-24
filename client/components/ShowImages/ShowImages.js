@@ -412,9 +412,9 @@ export default class ShowImages extends React.Component{
                             style={{ display: 'none'}}
                             onChange={this.onChangeFiles}
                         />
-                        {/*<div className="no-foto-order">Если ваш заказ не предпологает печать фотографий,*/}
-                            {/*а иную услугу, просто игнорируйте формат и бумагу при описании кождого фото и*/}
-                            {/*укажите в описании какую именно услугу хотите заказать</div>*/}
+                        <div className="no-foto-order">Если ваш заказ не предпологает печать фотографий,
+                            а иную услугу, просто игнорируйте формат и бумагу при описании кождого фото и
+                            укажите в описании какую именно услугу хотите заказать</div>
                     </div>
                     <div className="right-btns">
                         <button

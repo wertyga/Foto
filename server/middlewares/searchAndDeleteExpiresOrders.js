@@ -12,7 +12,7 @@ export default function searchAndDeleteExpiresOrders() {
         if(err) {
             log.error(err.message);
         } else {
-            Promise.all(ordersDates.map(date => {
+            return Promise.all(ordersDates.map(date => {
                 const orderNames = fs.readdirSync(path.join(config.uploads.ordersPath, date));
                 return {
                     date,
@@ -22,8 +22,8 @@ export default function searchAndDeleteExpiresOrders() {
                 .then(orders => {
                     orders = flattenDeep(orders);
 
-                    Promise.all(orders.map(order => {
-                        Promise.all(order.orderNames.map(item => {
+                    return Promise.all(orders.map(order => {
+                        return Promise.all(order.orderNames.map(item => {
                             Order.findOne({ orderName: item })
                                 .then(existOrder => {
                                     if(!existOrder) {

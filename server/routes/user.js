@@ -120,7 +120,7 @@ route.post('/api/recovery-pass', (req, res) => {
                                 subject: 'Восстановление пароля',
                                 html: `
                                     <div>Ссылка для восстановления пароля:</div>
-                                    <a href=${config.hostAddress}/user/recovery-link/${recovery._id}>${config.hostAddress}/user/recovery-link/${recovery._id}</a>
+                                    <a href="${config.hostAddress}/user/recovery-link?id=${recovery._id}">${config.hostAddress}/user/recovery-link?id=${recovery._id}</a>
                                     <div>Ссылка будет доступна в течении 60 минут</div>
                                 `
                             };
@@ -142,8 +142,8 @@ route.post('/api/recovery-pass', (req, res) => {
     }
 });
 
-route.get('/recovery-link/:id', (req, res) => {
-    const { id } = req.params;
+route.get('/recovery-link', (req, res) => {
+    const { id } = req.query;
 
     return RecoveryPass.findById(id)
         .then(recovery => {
@@ -166,10 +166,10 @@ route.post('/update-password', (req, res) => {
         return RecoveryPass.findById(id)
             .then(recovery => {
                 if(recovery) {
-                    User.update({ username: recovery.username }, { $set: { hashPassword: bcrypt.hashSync(password) } })
+                    return User.update({ username: recovery.username }, { $set: { hashPassword: bcrypt.hashSync(password) } })
                         .then(user => {
-                            recovery.remove();
-                            res.redirect('/login');
+                            return recovery.remove().then(() => res.redirect('/login'));
+
                         })
                 } else {
                     res.status(400).json({ error: "Время вышло" });

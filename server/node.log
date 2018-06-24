@@ -4,3 +4,5 @@ Type: ERROR; Time: Sat Jun 23 2018 14:28:27 GMT+0300 (Восточная Евр�
 
 Type: ERROR; Time: Sat Jun 23 2018 16:57:16 GMT+0300 (+03); File: common/mongoose.js; Message: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
 
+Type: ERROR; Time: Sun Jun 24 2018 11:54:55 GMT+0300 (+03); File: common/mongoose.js; Message: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+

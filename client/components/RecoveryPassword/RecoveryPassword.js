@@ -57,7 +57,7 @@ export default class RecoveryPassword extends React.Component {
             this.setState({
                 loading: true
             });
-            this.props.updatePassword({ password: this.state.value, id: this.props.match.params.id })
+            this.props.updatePassword({ password: this.state.value, id: this.props.location.search.split('?id=')[1]})
                 .then(() => this.props.history.push('/login'))
                 .catch(err => {
                     this.setState({

@@ -84,7 +84,7 @@ if (dev ? false : cluster.isMaster) {
     // app.use(express.static(config.uploads.destination));
     app.use(express.static(path.join(__dirname, '..')));
     app.use(express.static(config.uploads.ordersPath));
-    // app.use(express.static(__dirname));
+    app.use(express.static(__dirname));
 
     app.use(express.static(path.join(__dirname, 'src')));
 

@@ -17,11 +17,12 @@ import setLocalStorage from './common/commonFunctions/setLocalStorage';
 import { validateToken } from '../server/common/validate';
 
 import { userSet } from './actions/auth';
-import { loginAction } from './actions/auth';
 
 import rootReducer from './reducers/rootReducer';
 import './styles/font-awesome.css';
 import './styles/index.sass';
+
+import favicon from '../server/favicon.png';
 
 const env = process.env.NODE_ENV === 'development';
 let store;
@@ -37,8 +38,12 @@ if(env) {
         rootReducer,
         applyMiddleware(thunk)
     );
-}
-
+};
+const link = document.createElement('link');
+link.setAttribute('rel', 'shortcut icon');
+link.setAttribute('href', favicon);
+link.setAttribute('type', 'image/png');
+document.head.appendChild(link)
 
 if(localStorage[clientConfig.localStorageProperty]) {
     const token = localStorage[clientConfig.localStorageProperty];

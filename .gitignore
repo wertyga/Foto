@@ -4,3 +4,4 @@ dist/
 .idea/
 server/common/emailConfig.js
 production/
+orders/

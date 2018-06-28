@@ -19,6 +19,15 @@ export default class Contacts extends React.Component {
     constructor(props) {
         super(props);
 
+        this.levkovaCoords = {
+            lat: 53.8814256,
+            lng: 27.5539121
+        };
+        this.eseninaCoords = {
+            lat: 53.849685,
+            lng: 27.465211
+        };
+
         this.state = {
             openMap: false,
             openHeight: false,
@@ -27,19 +36,36 @@ export default class Contacts extends React.Component {
             contacts: '',
             error: {},
             loading: false,
-            sendEmail: false
+            sendEmail: false,
+            mapCoords: this.levkovaCoords
         };
     };
 
-    openMap = () => {
-        this.setState({
-            openHeight: !this.state.openHeight
-        });
+    openMap = (sign) => {
         if(!this.state.openMap) {
             this.setState({
                 openMap: true
             })
         };
+        switch(sign) {
+            case(1):
+                this.setState({
+                    mapCoords: this.levkovaCoords,
+                    openHeight: this.state.openHeight === 1 ? false : 1
+                });
+                break;
+            case(2):
+                this.setState({
+                    mapCoords: this.eseninaCoords,
+                    openHeight: this.state.openHeight === 2 ? false : 2
+                });
+                break;
+            default:
+                this.setState({
+                    mapCoords: this.levkovaCoords,
+                    openHeight: false
+                });
+        }
     };
 
     onChangeField = e => {
@@ -109,19 +135,37 @@ export default class Contacts extends React.Component {
                 <h1>Контакты</h1>
                     <div className="wrapper">
                         <h3 ref="address"><i className="fa fa-map-marker" aria-hidden="true" /> Адрес: </h3>
-                        <p>г. Минск, ул. Левкова, 8/2</p>
+                        <div className="map_wrapper">
+                            <div className="map_item">
+                                <p>г. Минск, ул. Левкова, 8/2</p>
+                                <div className="map">
+                                    <p
+                                        style={{ marginBottom: 10, cursor: 'pointer' }}
+                                        onClick={() => this.openMap(1)}
+                                    >
+                                        {this.state.openHeight === 1 ? 'Закрыть карту...' : 'Открыть карту...'}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="map_item">
+                                <p>г. Минск, ул. Есенина, 10</p>
+                                <div className="map">
+                                    <p
+                                        style={{ marginBottom: 10, cursor: 'pointer' }}
+                                        onClick={() => this.openMap(2)}
+                                    >
+                                        {this.state.openHeight === 2 ? 'Закрыть карту...' : 'Открыть карту...'}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {this.state.openMap &&
+                            <Map open={this.state.openHeight}
+                                 lat={this.state.mapCoords.lat}
+                                 lng={this.state.mapCoords.lng}
+                            />
+                        }
                     </div>
-
-                    <div className="map">
-                        <p
-                            style={{ marginBottom: 10, cursor: 'pointer' }}
-                            onClick={this.openMap}
-                        >
-                            {this.state.openHeight ? 'Закрыть карту...' : 'Открыть карту...'}
-                        </p>
-                        {this.state.openMap && <Map open={this.state.openHeight}/>}
-                    </div>
-
 
                     <div className="wrapper">
                         <h3 ref="phone"><i className="fa fa-phone" aria-hidden="true" /> Контактный телефон: </h3>

@@ -7,11 +7,7 @@ export default class Footer extends React.Component {
                 <div className="address">
                     <h4>Время работы:</h4>
                     <div className="content">
-                        <p><strong>Пн: </strong><span>10:00 - 19:00</span></p>
-                        <p><strong>Вт: </strong><span>10:00 - 19:00</span></p>
-                        <p><strong>Ср: </strong><span>10:00 - 19:00</span></p>
-                        <p><strong>Чт: </strong><span>10:00 - 19:00</span></p>
-                        <p><strong>Пт: </strong><span>10:00 - 19:00</span></p>
+                        <p><strong>Пн.-Пт.:</strong><span>10:00 - 19:00</span></p>
                         <p><strong>Сб: </strong><span>10:00 - 17:00</span></p>
                     </div>
                 </div>
@@ -20,7 +16,7 @@ export default class Footer extends React.Component {
                     <div className="content">
                         <p><strong>Velcom: </strong><span>+375 29 334 09 86</span></p>
                         <p><strong>Life :) </strong><span>+375 25 959 89 70</span></p>
-                        <p><strong>Viber: </strong><span>+375 29 334 09 86</span></p>
+                        <p><strong>Viber: </strong><span>+375 25 959 89 70</span></p>
                     </div>
                 </div>
                 <div className="social">

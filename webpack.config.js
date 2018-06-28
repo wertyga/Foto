@@ -35,8 +35,34 @@ const browserConfig = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.eot$|.ttf$|.woff$|.jpg$|.png$|.svg$|.woff2$/,
+                test: /\.(eot|ttf|woff|svg|woff2)$/,
                 loaders: ['file-loader']
+            },
+            {
+                test: /\.(jpg|jpeg|png)$/i,
+                loaders: [
+                    {
+                        loader: 'file-loader'
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        query: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            optipng: {
+                                optimizationLevel: 4,
+                            },
+                            pngquant: {
+                                quality: '75-90',
+                                speed: 3,
+                            },
+                        }
+                    }
+                ]
             }
         ]
     },

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-
+const FontminPlugin = require('fontmin-webpack');
 
 
 
@@ -35,11 +35,11 @@ const browserConfig = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(eot|ttf|woff|svg|woff2)$/,
+                test: /\.(eot|ttf|woff|woff2)$/,
                 loaders: ['file-loader']
             },
             {
-                test: /\.(jpg|jpeg|png)$/i,
+                test: /\.(jpg|jpeg|png|svg)$/i,
                 loaders: [
                     {
                         loader: 'file-loader'
@@ -68,10 +68,9 @@ const browserConfig = {
     },
 
     plugins: [
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'common',
-        //     filename: '[name].common.js'
-        // }),
+        new FontminPlugin({
+            autodetect: true, // automatically pull unicode characters from CSS
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
@@ -89,58 +88,58 @@ const browserConfig = {
     }
 };
 
-const serverConfig = {
-    entry: './server/index.js',
-
-    target: 'node',
-    externals: [nodeExternals()],
-
-    output: {
-        path: path.join(__dirname, 'src'),
-        filename: 'server.js',
-        libraryTarget: "commonjs2"
-    },
-
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loaders: ['react-hot-loader/webpack', 'babel-loader']
-
-            },
-            {
-                test: /\.css$/,
-                loaders: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.sass$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.eot$|.ttf$|.woff$|.jpg$|.png$|.svg$|.woff2$/,
-                loaders: ['file-loader']
-            }
-        ]
-    },
-
-    plugins: [
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'common',
-        //     filename: '[name].common.js'
-        // }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.ProvidePlugin({
-            'React': 'react',
-            "PropTypes":"prop-types",
-        })
-    ],
-
-    resolve: {
-        extensions: ['.js', '.jsx']
-    }
-};
+// const serverConfig = {
+//     entry: './server/index.js',
+//
+//     target: 'node',
+//     externals: [nodeExternals()],
+//
+//     output: {
+//         path: path.join(__dirname, 'src'),
+//         filename: 'server.js',
+//         libraryTarget: "commonjs2"
+//     },
+//
+//     module: {
+//         loaders: [
+//             {
+//                 test: /\.jsx?$/,
+//                 exclude: /node_modules/,
+//                 loaders: ['react-hot-loader/webpack', 'babel-loader']
+//
+//             },
+//             {
+//                 test: /\.css$/,
+//                 loaders: ['style-loader', 'css-loader']
+//             },
+//             {
+//                 test: /\.sass$/,
+//                 loaders: ['style-loader', 'css-loader', 'sass-loader']
+//             },
+//             {
+//                 test: /\.eot$|.ttf$|.woff$|.jpg$|.png$|.svg$|.woff2$/,
+//                 loaders: ['file-loader']
+//             }
+//         ]
+//     },
+//
+//     plugins: [
+//         // new webpack.optimize.CommonsChunkPlugin({
+//         //     name: 'common',
+//         //     filename: '[name].common.js'
+//         // }),
+//         new webpack.HotModuleReplacementPlugin(),
+//         new webpack.NoEmitOnErrorsPlugin(),
+//         new webpack.optimize.OccurrenceOrderPlugin(),
+//         new webpack.ProvidePlugin({
+//             'React': 'react',
+//             "PropTypes":"prop-types",
+//         })
+//     ],
+//
+//     resolve: {
+//         extensions: ['.js', '.jsx']
+//     }
+// };
 
 module.exports = [browserConfig];

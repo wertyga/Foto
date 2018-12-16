@@ -169,9 +169,9 @@ export default class Contacts extends React.Component {
 
                     <div className="wrapper">
                         <h3 ref="phone"><i className="fa fa-phone" aria-hidden="true" /> Контактный телефон: </h3>
-                        <a href="tel:+375259598070"><span>Life:)</span> +375 25 959 89 70</a>
-                        <a href="tel:+375293340986"><span>Velcom</span> +375 29 334 09 86</a>
-                        <p>Viber: +375 29 334 09 86</p>
+                        <a href="tel:+375259598070"><span>Life:)</span> <span>+375 25 959 89 70</span></a>
+                        <a href="tel:+375293340986"><span>Velcom:</span> <span>+375 29 334 09 86</span></a>
+                        <p><span>Viber:</span> <span>+375 25 959 89 70</span></p>
                     </div>
 
                     <div className="email">

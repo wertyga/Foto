@@ -240,7 +240,7 @@ route.post('/api/delete-order', (req, res) => {
                 res.status(409).json({ error: 'order is in progress' });
                 return;
             } else {
-                Promise.all([
+                return Promise.all([
                     order.remove(),
                     shell.rm('-rf', `${config.uploads.ordersPath}/${order.datePath}/${order.orderName}`),
                 ])
